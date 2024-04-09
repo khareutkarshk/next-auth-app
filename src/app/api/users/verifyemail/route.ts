@@ -13,7 +13,7 @@ export async function POST(request: NextRequest){
             verifyTokenExpiry: {$gt: Date.now()}})
 
         if(!user){
-            return NextResponse.json({error: "Incalid token"}, {status: 400})
+            return NextResponse.json({error: "Invalid token"}, {status: 400})
         }
 
         console.log(user);
